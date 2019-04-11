@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.gamelogic_singleplayer.*
 import no.student.nkv.ultimatetictactoe.R
-import no.student.nkv.ultimatetictactoe.screens.SplashScreenActivity
+import no.student.nkv.ultimatetictactoe.screens.WhenWonActivity
 import java.util.*
 
 class GameLogicSinglePlayer : AppCompatActivity() {
@@ -258,14 +258,14 @@ class GameLogicSinglePlayer : AppCompatActivity() {
     private fun giveResult(board: ArrayList<String>) {
         if (result(board, "X")) {
             startActivity(
-                Intent(this@GameLogicSinglePlayer, SplashScreenActivity::class.java).putExtra(
+                Intent(this@GameLogicSinglePlayer, WhenWonActivity::class.java).putExtra(
                     "player",
                     "YOU"
                 )
             )
         } else if (result(board, "O")) {
             startActivity(
-                Intent(this@GameLogicSinglePlayer, SplashScreenActivity::class.java).putExtra(
+                Intent(this@GameLogicSinglePlayer, WhenWonActivity::class.java).putExtra(
                     "player",
                     "COMPUTER"
                 )
@@ -273,7 +273,7 @@ class GameLogicSinglePlayer : AppCompatActivity() {
         }
         if (boardIsNotFull(board)) {
             startActivity(
-                Intent(this@GameLogicSinglePlayer, SplashScreenActivity::class.java).putExtra(
+                Intent(this@GameLogicSinglePlayer, WhenWonActivity::class.java).putExtra(
                     "player",
                     "Tie"
                 )

@@ -4,20 +4,18 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
-import android.view.Window
-import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import kotlinx.android.synthetic.main.activity_won.*
 import no.student.nkv.ultimatetictactoe.MainActivity
 import no.student.nkv.ultimatetictactoe.R
 
-class SplashScreenActivity : AppCompatActivity() {
+class WhenWonActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_won)
 
-        val player = intent.getStringExtra("player")
+        val player = this.intent.getStringExtra("Nicolai")
         if(player == "Tie") textViewWon.text = "TIE"
         else textViewWon.text = "$player WON"
 
@@ -25,7 +23,7 @@ class SplashScreenActivity : AppCompatActivity() {
         textViewWon.startAnimation(anim)
 
         Handler().postDelayed({
-            startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
+            startActivity(Intent(this@WhenWonActivity, MainActivity::class.java))
         }, 3000)
     }
 }

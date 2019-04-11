@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".gameLogic.GameLogicMultiplayer"/>
-        <activity android:name=".screens.SplashScreenActivity"/>
+        <activity android:name=".screens.WhenWonActivity"/>
         <activity android:name=".gameLogic.GameLogicSinglePlayer"/>
     </application>
 
